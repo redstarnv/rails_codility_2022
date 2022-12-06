@@ -1,0 +1,35 @@
+// https://swimlanes.io/d/xSR-dFdkI
+
+title: Payment flow (happy path)
+
+_: **1. User requests a payment**
+
+autonumber
+
+User -> Website: Submit payment form (via frontend)
+
+Website -> Payment System: Request payment
+
+Payment System -> Website: Payment page URL
+
+Website -> User: Redirect to payment page URL
+
+_: **2. User completes payment**
+
+User -> Payment System: submit payment details (e.g. credit card data)
+
+Payment System -> User: redirect back to website
+
+User -> Website: land on confirmation page
+
+_: **3. Website credits user**
+
+Payment System -> Website: send payment confirmation
+
+Website -> Balance/Tnx system: credit user
+
+Balance/Tnx system -> Website: confirm credit
+
+Website -> Payment System: confirm payment receipt
+
+Website -> User: confirm successful payment
